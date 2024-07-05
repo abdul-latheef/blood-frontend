@@ -1,0 +1,75 @@
+<section class="pt-5" *ngIf="filterRecord">
+    <div class="container">
+        <form (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">First Name</label>
+                                <h2 *ngIf="editDetailsRecord">{{filterRecord[0].firstName}}</h2>
+                                <input type="text" name="firstName" *ngIf="!editDetailsRecord" class="form-control"
+                                    [(ngModel)]="filterRecord[0].firstName">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Last Name</label>
+                                <h2 *ngIf="editDetailsRecord">{{filterRecord[0].lastName}}</h2>
+                                <input type="text" name="lastName" *ngIf="!editDetailsRecord" class="form-control"
+                                    [(ngModel)]="filterRecord[0].lastName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Phone Number</label>
+                                <h2 *ngIf="editDetailsRecord">{{filterRecord[0].phoneNumber}}</h2>
+                                <input type="text" name="phoneNumber" *ngIf="!editDetailsRecord" class="form-control"
+                                    [(ngModel)]="filterRecord[0].phoneNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Last Donate Date</label>
+                                <h2 *ngIf="editDetailsRecord">{{filterRecord[0].lastDonateDate | date:'dd-MMM-yyyy'}}</h2>
+                                <input type="date" name="lastDonateDate" *ngIf="!editDetailsRecord" class="form-control"
+                                    [(ngModel)]="filterRecord[0].lastDonateDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Blood Group</label>
+                                <h2 *ngIf="editDetailsRecord">{{filterRecord[0].bloodGroup}}</h2>
+                                <select name="bloodGroup" id="" *ngIf="!editDetailsRecord" class="form-control" [(ngModel)]="filterRecord[0].bloodGroup">
+                                    <option value="">Select</option>
+                                    <option value="A+">A+</option>
+                                    <option value="B+">B+</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="O+">AB+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O-">O-</option>
+                                    <option value="O+">O+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for=""></label>
+                            <button class="btn btn-primary mt-4" (click)="editDetails()" *ngIf="editDetailsRecord">Edit
+                                Details</button>
+                            <button class="btn btn-primary mt-4 me-3" *ngIf="!editDetailsRecord"
+                                (click)="editDetails()">Cancel</button>
+                            <button type="submit" class="btn btn-primary mt-4" *ngIf="!editDetailsRecord">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</section>

@@ -1,0 +1,61 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>{{ body }}</p>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" name="uuid" formControlName="uuid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label>First Name</label>
+          <input type="text" class="form-control" formControlName="firstName">
+          <div class="error"
+            *ngIf="userForm.get('firstName')?.hasError('required')&& userForm.get('firstName')?.touched">
+            Enter your first Name
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label>Last Name</label>
+          <input type="text" class="form-control" formControlName="lastName">
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label>Phone Number</label>
+      <input type="number" class="form-control" formControlName="phoneNumber">
+    </div>
+    <div class="form-group mb-3">
+      <label>Blood Group</label>
+      <select name="" id="" class="form-control" formControlName="bloodGroup">
+        <option value="">Select</option>
+        <option value="A+">A+</option>
+        <option value="B+">B+</option>
+        <option value="AB+">AB+</option>
+        <option value="O+">AB+</option>
+        <option value="A-">A-</option>
+        <option value="B-">B-</option>
+        <option value="AB-">AB-</option>
+        <option value="O-">O-</option>
+        <option value="O+">O+</option>
+      </select>
+    </div>
+    <div class="form-group mb-3">
+      <label>Last Dontate Date</label>
+      <input type="date" class="form-control" formControlName="lastDonateDate">
+    </div>
+    
+    <div class="form-group mt-3 text-center">
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="confirm()">Confirm</button>
+  <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+</div>

@@ -1,0 +1,47 @@
+.mat-header-cell{
+    color: #000;
+}
+.mat-mdc-table{
+    background-color: #fff;
+    .mat-mdc-cell{
+        color: #000;
+    }
+}
+::ng-deep mat-form-field{
+    border: 1px solid #ccc !important;
+    color: #000 !important;
+}
+::ng-deep mat-select{
+    color: #000 !important;
+}
+.mat-mdc-paginator{
+    background-color: #fff;
+    color: #000;
+}
+.mat-mdc-paginator .mat-mdc-select {
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    color: #000;
+}
+
+mat-header-row{
+    color: #000;
+}
+/* mat-table,
+mat-header-cell,
+mat-cell{
+    border: 1px solid #e7e7e7;
+} */
+mat-table{
+    border: 1px solid #e7e7e7;
+}
+mat-cell{
+    border-bottom: 1px solid #e7e7e7;
+}
+mat-header-cell{
+    background: #f1f1f1 !important;
+}
+
+::ng-deep .mat-mdc-paginator-icon{
+    fill: rgb(0 0 0 / 54%) !important;
+}
